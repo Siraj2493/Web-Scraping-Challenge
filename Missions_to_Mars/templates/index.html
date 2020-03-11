@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="card border-0" style="width: 100%">
+        <div class="card-body">
+        <h3 class="card-title">Latest Mars News</h3>
+        <h5 class="card-title">{{ mars.news_title }}</h5>
+        <p class="card-text">{{ mars.news_teaser }}</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm col-8">
+            <div class="card border-0" style="width: 100%">
+                <div class="card-body">
+                <h5 class="card-title">Featured Image</h5>
+                <img src={{ mars.jpl_image }} class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+      
+    </div>
+    <div class="col-sm col-4">
+        <div class="row">
+            <div class="card border-0" style="width: 100%">
+                <div class="card-body">
+                  <h5 class="card-title">Current Weather on Mars</h5>
+                  <p class="card-text">{{ mars.weather_str }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card border-0" style="width: 100%">
+                <div class="card-body">
+                  <h5 class="card-title">Mars Facts</h5>
+                  <table class="table">
+                    {% for key, value in mars.facts.items() %}
+                       <tr>
+                            <th scope="row"> {{ key }} </th>
+                            <td> {{ value }} </td>
+                       </tr>
+                    {% endfor %}
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row"><h3>Mars Hemispheres</h3></div>
+<div class="row">
+    <div class="col-sm col-6">
+        <div class="card border-0">
+            <img src={{mars.hemi_image1.img_url}} class="card-img-top img-fluid">
+            <div class="card-body">
+            <h4 class="card-title">{{mars.hemi_image1.title}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm col-6">
+        <div class="card border-0">
+            <img src={{mars.hemi_image2.img_url}} class="card-img-top img-fluid">
+            <div class="card-body">
+            <h4 class="card-title">{{mars.hemi_image2.title}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm col-6">
+        <div class="card border-0">
+            <img src={{mars.hemi_image3.img_url}} class="card-img-top img-fluid">
+            <div class="card-body">
+            <h4 class="card-title">{{mars.hemi_image3.title}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm col-6">
+        <div class="card border-0">
+            <img src={{mars.hemi_image4.img_url}} class="card-img-top img-fluid">
+            <div class="card-body">
+            <h4 class="card-title">{{mars.hemi_image4.title}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
